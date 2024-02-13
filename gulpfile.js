@@ -6,13 +6,13 @@ const uglify = require('gulp-uglify');
 function scripts() {
     return gulp.src('./src/scripts/*.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/scripts'))
+        .pipe(gulp.dest('./dist/scripts/'))
 }
 
 function styles() {
     return gulp.src('./src/styles/*.scss')
         .pipe(sass({ outputStyle: 'compressed' }))
-        .pipe(gulp.dest('./dist/styles'));
+        .pipe(gulp.dest('./dist/styles/'));
 }
 
 function images() {
