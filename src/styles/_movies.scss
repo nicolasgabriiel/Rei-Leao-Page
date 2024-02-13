@@ -1,0 +1,41 @@
+.movies {
+    padding: 75px calc(3.5vw + 24px);
+
+    &__title {
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+
+    &__list {
+        display: flex;
+        justify-content: space-between;
+        margin-left: -10px;
+
+        &__item {
+            display: inline-block;
+            margin: 10px;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: -2px 3px 20px 0 rgba(0,0,0,.69), 0 16px 10px -10px rgba(0,0,0,.73);
+            transition: box-shadow 0.5s ease;
+            transition: margin 0.5s ease;
+            transition: scale 0.5s ease;
+            &:hover {
+                scale: 1.04;
+                margin: 5px;
+                padding: 5px;
+                box-shadow: none;
+                transition: box-shadow 0.5s ease;
+            transition: margin 0.5s ease;
+            transition: scale 0.5s ease;
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
+            border-radius: 4px;
+            cursor: pointer;
+
+        }
+    }
+}
