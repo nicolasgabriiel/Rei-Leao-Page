@@ -1,5 +1,68 @@
-*{
+@use 'variaveis';
+
+
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+    list-style: none;
+}
+
+@mixin text($fontSize: 12px) {
+    font-size: $fontSize;
+    line-height: calc(10px + $fontSize);
+    color: variaveis.$corTextoPrincipal;
+}
+
+@mixin text-silver($fontSize: 12px) {
+    @include text($fontSize);
+    color: variaveis.$corTextoSecundario;
+}
+
+.text--small {
+    @include text(12px)
+}
+
+.text {
+    @include text(15px)
+}
+
+.text--big {
+    @include text(20px)
+}
+
+.text-silver--small {
+    @include text-silver(12px)
+}
+
+.text-silver {
+    @include text-silver(15px)
+}
+
+.text-silver--big {
+    @include text-silver(20px)
+}
+.button-principal{
+    @include text(15px);
+    background-color: variveis.$corBotaoPrincipal;
+    padding: 0 24px;
+    height: 56px;
+    cursor: pointer;
+    &:hover{
+        background-color: lighten(variveis.$corBotaoPrincipal, 10%) ;
+    }
 }
