@@ -1,0 +1,102 @@
+@use 'variaveis';
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: variaveis.$corDeFundo;
+    transition: background-color .5s ease;
+    z-index: 1;
+
+    &--is-hidden {
+        background-color: transparent;
+
+        .header {
+            &__logo, &__links__item:first-child {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    }
+
+    &__container {
+        padding: 3px 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            padding: 0 12px 0 20px;
+        }
+    }
+
+    &__logo {
+        max-width: 79px;
+        width: 100%;
+        margin: 5px;
+        transition: opacity .5s ease;
+
+        @media (max-width: 768px) {
+            max-width: 64px;
+        }
+    }
+
+    &__links {
+        display: flex;
+
+        &__item {
+            margin: 8px;
+            transition: opacity .5s ease;
+        }
+    }
+
+    .button-principal {
+        @media (max-width: 768px) {
+            font-size: 13px;
+            padding: 8px 11px;
+            height: 40px;
+            letter-spacing: 0;
+        }
+    }
+}
+
+.button-principal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 1.6;
+    color: variaveis.$corTextoPrincipal;
+    background-color: variaveis.$corDeFundoBotaoPrimario;
+    text-transform: uppercase;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 0px 16px;
+    letter-spacing: 1.5px;
+    border: 1px solid variaveis.$corDeFundoBotaoPrimario;
+    cursor: pointer;
+    transition: .5s;
+
+    &:hover {
+        transition: .5s;
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 10%);
+    }
+
+    &:hover {
+        transition: .5s;
+        background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 10%);
+    }
+    &--dark {
+        transition: .5s;
+        background-color: rgba(variaveis.$corDeFundoBotaoDark, 0.8);
+        border-color: variaveis.$corTextoPrincipal;
+    
+        &:hover {
+            transition: .5s;
+            background-color: variaveis.$corTextoPrincipal;
+            color: variaveis.$corDeFundo;
+        }
+    }
+}

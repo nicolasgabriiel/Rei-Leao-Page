@@ -1,3 +1,5 @@
+@use 'variaveis';
+
 .hero{
     padding: 75px calc(3.5vw + 24px);
     &__img{
@@ -11,11 +13,12 @@
     }
     &__list{
         display: flex;
-        align-items: flex-end;
+        align-items: stretch;
         &__item{
             img{
                 display: block;
                 height: 20px;
+                margin-right: 5px;
             }
             p{
                 margin: 0;
@@ -29,8 +32,25 @@
             max-width: 880px;
         }
     }
-    .button-principal{
+    .button-hero {
+        font-size: 15px;
+        color: white;
+        background-color: variaveis.$corDeFundoBotaoPrimario;
+        padding: 0 24px;
+        height: 56px;
+        cursor: pointer;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+        letter-spacing: 1.5px;
+        transition: .5s;
         margin-top: 32px;
+    
+        &:hover {
+            background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 10%);
+        }
     }
     
 }
+
