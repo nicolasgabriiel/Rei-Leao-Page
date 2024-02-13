@@ -3,9 +3,14 @@
 .hero{
     padding: 75px calc(3.5vw + 24px);
     &__img{
-        max-width: 341px;
+        max-width: 340px;
         width: 100%;
         padding-bottom: 12px;
+
+        @media (max-width: 768px){
+            max-width: 160px;
+        }
+        
         img{
             display: block;
             width: 100%;
@@ -48,6 +53,7 @@
         margin-top: 32px;
     
         &:hover {
+            transition: .5s;
             background-color: lighten(variaveis.$corDeFundoBotaoPrimario, 10%);
         }
     }
